@@ -6,7 +6,7 @@
   <link href="https://xiaofeifei-1.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaofeifei-1.github.io/"/>
-  <updated>2023-07-06T13:41:31.198Z</updated>
+  <updated>2023-07-06T13:47:26.555Z</updated>
   <id>https://xiaofeifei-1.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>doceker记录-2</title>
+    <link href="https://xiaofeifei-1.github.io/2023/07/06/doceker-ji-lu-2/"/>
+    <id>https://xiaofeifei-1.github.io/2023/07/06/doceker-ji-lu-2/</id>
+    <published>2023-07-06T13:44:51.000Z</published>
+    <updated>2023-07-06T13:47:26.555Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;docker使用技巧&quot;&gt;&lt;a href=&quot;#docker使用技巧&quot; class=&quot;headerlink&quot; title=&quot;docker使用技巧&quot;&gt;&lt;/a&gt;docker使用技巧&lt;/h1&gt;&lt;h3 id=&quot;1、docker常用命令&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="https://xiaofeifei-1.github.io/categories/Markdown/"/>
+    
+    
+    <category term="Typora" scheme="https://xiaofeifei-1.github.io/tags/Typora/"/>
+    
+    <category term="Markdown" scheme="https://xiaofeifei-1.github.io/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

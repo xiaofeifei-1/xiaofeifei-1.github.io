@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>doceker记录-2</title>
+      <link href="/2023/07/06/doceker-ji-lu-2/"/>
+      <url>/2023/07/06/doceker-ji-lu-2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="docker使用技巧"><a href="#docker使用技巧" class="headerlink" title="docker使用技巧"></a>docker使用技巧</h1><h3 id="1、docker常用命令"><a href="#1、docker常用命令" class="headerlink" title="1、docker常用命令"></a>1、docker常用命令</h3><p><a href="https://blog.csdn.net/weixin_40228600/article/details/128162970">https://blog.csdn.net/weixin_40228600/article/details/128162970</a></p><h3 id="2、【Docker】-容器内如何使用GPU资源"><a href="#2、【Docker】-容器内如何使用GPU资源" class="headerlink" title="2、【Docker】 容器内如何使用GPU资源"></a>2、【Docker】 容器内如何使用GPU资源</h3><p>下边的命令是使用所有的GPU资源:</p><pre><code>docker run -it --gpus all -v out_path:container_inner_path -p out_port:container_inner_port --shm-size=32g --name container_name image_name:tag bash</code></pre><p>当我只想指定某一个GPU资源比如，id=3的卡时，命令就是这样的：</p><pre><code>docker run -it --gpus "device=3" -v out_path:container_inner_path -p out_port:container_inner_port --shm-size=32g --name container_name image_name:tag bash</code></pre><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/TzkU7GI9bOlZC3rtynNaw8s2VaPa_Lrg4jpR_Qm_MDA.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p><h3 id="3、上一步执行命令的结果作为下一步执行命令的参数"><a href="#3、上一步执行命令的结果作为下一步执行命令的参数" class="headerlink" title="3、上一步执行命令的结果作为下一步执行命令的参数"></a>3、上一步执行命令的结果作为下一步执行命令的参数</h3><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/ZDMJ2J7J_GS2uUvZW_DQ8NeMUiJKp7Ew4BpZOLu2NFw.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p><h3 id="4、进入容器内部操作命令"><a href="#4、进入容器内部操作命令" class="headerlink" title="4、进入容器内部操作命令"></a>4、进入容器内部操作命令</h3><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/8CtlFdGnF1FWbKXkj_CWY82OV8jtRRNihAI669EgfoI.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p><p><strong>通过docker -it 创建的容器，exit 退出之后，就关闭容器了</strong></p><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/BAPFSZP2zWqz2EE62JOI94EZ8EMMGMWPiorpeb-E2Xc.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p><p><strong>docker -id 创建容器，后台运行，需要通过docker exec -it 进入容器</strong></p><h3 id="5、一个容器挂载多个目录"><a href="#5、一个容器挂载多个目录" class="headerlink" title="5、一个容器挂载多个目录"></a>5、一个容器挂载多个目录</h3><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/MNfWbqyIpHQtoz32FRTgu36kBaH6IRXmP7zVNQOHCmk.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p><p><strong>也可以是多个容器挂载宿主机同一个目录</strong> </p><h3 id="6、数据卷容器"><a href="#6、数据卷容器" class="headerlink" title="6、数据卷容器"></a>6、数据卷容器</h3><p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/42a233fe-ce16-4554-a87b-a1ee46227e04/resources/oMtlOkqYWzWtNozVPY0Ld3YW81wI3l3qwk7noVzi27w.png?token=W.bMXDCxUNajomhF_PuVra0KMQZ5ZFZ1BVNcyBLZQ6_Y6vldaOBAu7G4UaNVn7clU" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/07/06/hello-world/"/>
       <url>/2023/07/06/hello-world/</url>
