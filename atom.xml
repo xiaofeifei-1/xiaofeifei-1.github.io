@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Hexo</title>
   
-  
+  <subtitle>Kevin Blog</subtitle>
   <link href="https://xiaofeifei-1.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaofeifei-1.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://xiaofeifei-1.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>xiaofeifei</name>
     
   </author>
   
