@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, SLAM, Navigation, AI, Deep Learning">
+    <meta name="keywords" content="doceker记录-1, SLAM, Navigation, AI, Deep Learning">
     <meta name="description" content="这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>doceker记录-1 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">doceker记录-1</h1>
                 </div>
             </div>
         </div>
@@ -410,19 +410,223 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new "My New Post"
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="黑马docker教程"><a href="#黑马docker教程" class="headerlink" title="黑马docker教程"></a>黑马docker教程</h1><p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CJ411T7BK?p=19&amp;spm_id_from=pageDriver&amp;vd_source=2e902bf3da341bb799f24f58bd94e0a3">B站链接</a></p>
+<h3 id="1、Docker的原理"><a href="#1、Docker的原理" class="headerlink" title="1、Docker的原理"></a><strong>1、Docker的原理</strong></h3><p><strong>Docker是一种容器技术，解决软件跨环境迁移的问题</strong></p>
+<p>环境加代码等于容器，将容器发送就规避了软件跨环境迁移的问题。</p>
+<p>Docker可以让开发者<strong>把应用及其依赖包打包到一个轻量级，可移植的容器中</strong>，发布到任何流行的Linux机器上。</p>
+<p>容器是使用沙箱机制，相互隔离。</p>
+<p>容器性能开销极低。</p>
+<p>虚拟机运行多个进程，docker运行单个项目，容器不需要引导操作系统内核，开销小，接近本机性能，容器共享主机调度程序，节省资源。虚拟机虚拟化的是硬件，容器虚拟化的是操作系统，容器启动很快，性能好，能部署上千个。</p>
+<p>Docker镜像是容器的源代码，用来创建容器。</p>
+<p>Docker容器是包括应用及其所有依赖项，作为操作系统的独立进程运行。</p>
+<p><strong>非运行态情况下，容器是多个可读层和一个可写层的集合，其中多个可读层就组成了镜像，而容器就是在镜像的层面上加了一层可以读写层，镜像有指针指向父级镜像，没有父级就是底层镜像。容器层是可写的，容器层下面的镜像层都是可读的。</strong></p>
+<p>运行态的容器就是在非运行态情况下加入了文件系统的隔离技术，在可读写的统一文件系统上加了一个隔离的进程空间，进程空间可以执行一些指令，比如说docker create就是为指定镜像添加一个读写层，构成一个新容器，docker start重新启动已存在的容器，docker run等于前两个相加。</p>
+<p>docker ps -a列出所有容器</p>
+<p>docker images -a列出所有镜像</p>
+<p>docker rm删除容器</p>
+<p>docker rmi删除镜像</p>
+<p>docker save保存的是镜像</p>
+<p>docker export保存的是容器</p>
+<h3 id="2、Docker架构"><a href="#2、Docker架构" class="headerlink" title="2、Docker架构"></a><strong>2、Docker架构</strong></h3><p><strong>客户端 Docker核心 仓库</strong></p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/O5hZm1N33wcDtvb0MlIpDgfrt7ttYWaR4WgrT8p18Ew.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<p>Hosts（Docker核心）有两部分本机（local host）和远程机器（remote host）的区别。</p>
+<p>其中Docker会以daemon（守护进程）形式后台存在，也有两部分组成image（镜像）和container（容器），通过镜像可以创建容器，就是把某个镜像实例化了，一个镜像可以创建好几个容器。</p>
+<p>镜像又来源于仓库，一种是官方仓库，官方提供很多镜像文件，使用时需要拉取需要的镜像。也可以搭建私有的仓库，可以放自己准备的镜像。</p>
+<p>docker clients就是docker客户端，操作docker就通过客户端发送命令给守护进程。</p>
+<p>总结：</p>
+<p><strong>镜像（Image）：一个root文件系统。软件和软件相关的运行环境打包到一个镜像里。</strong></p>
+<p><strong>容器（Container）：镜像的一个实体，容器可以被创建，启动，停止，删除，暂停等。</strong></p>
+<p><strong>仓库（Repository）：仓库可以看成一个代码控制中心，用来保存镜像。</strong></p>
+<p>默认从docker hub（<a target="_blank" rel="noopener" href="https://hub.docker.com/%EF%BC%89%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F%EF%BC%8C%E5%A4%AA%E6%85%A2%E4%BA%86%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E5%99%A8%E3%80%82">https://hub.docker.com/）下载镜像，太慢了，可以配置镜像加速器。</a></p>
+<p>USTC，阿里云，网易云，腾讯云等。</p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/GWE0rHyLvPzuxMipUMU42js31O_YawlNIK9ePMRD1cw.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<h3 id="3、Docker命令-三部分-："><a href="#3、Docker命令-三部分-：" class="headerlink" title="3、Docker命令(三部分)："></a><strong>3、Docker命令(三部分)：</strong></h3><p>1.操作docker整体的服务，也叫守护进程命令</p>
+<p><strong>启动docker：systemctl start docker</strong></p>
+<p><strong>查看docker状态：systemctl status docker</strong></p>
+<p><strong>停止docker：systemctl stop docker</strong></p>
+<p><strong>重启docker：systemctl restart docker</strong></p>
+<p><strong>开机自动启动docker：systemctl enable docker</strong></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>2.操作镜像命令</p>
+<p><strong>查看镜像（和远程机器相关）：docker images</strong></p>
+<p><strong>搜索镜像（和远程机器相关）：docker search redis 此处做个例子</strong></p>
+<p><strong>拉取镜像（和本机相关）：docker pull redis后面不加:版本</strong>，就默认拉最</p>
+<p>新的（latest）版本，hub.docker.hub可以看镜像版本。</p>
+<p><strong>删除镜像（和本机相关）：docker rmi 对应的镜像ID（IMAGE ID）</strong>，就</p>
+<p>可以删除对应的镜像。也可以通过名字和版本号:docker rmi redis:5.0</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><p><strong>3.操作容器命令（重要）</strong></p>
+<p><strong>docker run -i -t –name=c1 centos:7 /bin/bash</strong></p>
+<p>（-i表示保持容器一直运行，-t表示给容器分配一个伪终端,，就是接下来可以输入终端指令，也可以把-it写一起，–name=c1给容器起名叫c1,以centos的7版本镜像建立容器，/bin/bash为进入容器的初始化命令指定解释器，exit可以退出镜像）</p>
+<p>-d表示后台创建容器，不会立即进入，要通过docker exec命令进入，exit退出也不关闭。</p>
+<p>由此可见，-it的容器为交互式容器，-id创建的为守护式容器</p>
+<p><strong>docker ps</strong></p>
+<p>（查看正在运行的容器，通过-it建立的容器，一旦exit就会停止运行，在后面加-a可以查看历史的容器）</p>
+<p><strong>docker exec -it c2 /bin/bash</strong> （此时的-it用处和上面一样，进入容器,c2为容器名）</p>
+<p>docker stop c2（停止c2容器）</p>
+<p>docker rm c1（删除容器,也可以跟id）</p>
+<p>docker rm <code>docker ps -aq</code>（删除所有容器，开启的容器不能删)</p>
+<p>docker inspect c2(查看c2容器的信息)可以看到比如数据卷配置信息，下方有描述</p>
+<h3 id="4、Docker容器的数据卷"><a href="#4、Docker容器的数据卷" class="headerlink" title="4、Docker容器的数据卷"></a>4、Docker容器的数据卷</h3><p><strong>数据卷的概念及作用</strong></p>
+<p>数据卷是宿主机中的一个目录或文件，在容器内建立一个目录，挂载上宿主机的目录，此时宿主机的目录就是数据卷，数据均中数据的修改可以影响到容器内的目录中的数据，双方都可以影响对方。</p>
+<p><strong>1.Docker容器删除后，由于数据卷的对应关系，宿主机中的数据可以得以保留，使得数据持久化。</strong></p>
+<p><strong>2.Docker容器和外部机器交换文件，通过数据卷当桥梁，可以实现数据的通信。</strong></p>
+<p><strong>3.容器之间也可以通过数据卷进行数据交互，一个数据卷可以别多个容器的目录挂载，反之亦然。</strong></p>
+<h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><p><strong>配置数据卷</strong></p>
+<p>创建启动容器是，使用-v参数设置数据卷</p>
+<p><strong>docker run… -v 宿主机目录(文件):容器内目录(文件)…</strong></p>
+<p>docker run -it –name=c3 -v /root/data:/root/data_container centos:7 /bin/bash</p>
+<p>目录必须是绝对路径</p>
+<p>如果目录不存在，会自动创建</p>
+<p>可以挂载多个数据卷</p>
+<p>此时上方例子有以下现象，可以看到宿主机/root/data添加文件，则容器/root/data_container内也会添加该文件，就算该容器被删了，数据卷还是存在，再新建容器还是会保留该挂载关系。</p>
+<h4 id="-3"><a href="#-3" class="headerlink" title=""></a></h4><p><strong>数据卷容器</strong></p>
+<p>数据卷容器用来交换数据更加方便，将数据卷容器挂载一个数据卷，再把其他容器挂载在该数据卷容器上。</p>
+<p>1.创建启动c3数据卷容器，使用-v参数设置数据卷</p>
+<p>docker run -it –name=c3 -v /volum centos:7 /bin/bash,数据卷目录没有了，只有容器目录，docker会自动分配一个目录当数据卷</p>
+<p>2.创建启动c1c2容器，使用–volumes-from参数设置数据卷</p>
+<p>docker run -it –name=c1 –volumes-from c3 centos:7 /bin/bash</p>
+<p>docker run -it –name=c2 –volumes-from c3 centos:7 /bin/bash</p>
+<p><strong>MySQL的部署</strong></p>
+<p>将MySQL容器内部的端口和宿主机的某个端口映射起来，当外部机器访问宿主机时，就相当于当问了容器的MySQL端口，这种操作称之为端口映射。</p>
+<table>
+<thead>
+<tr>
+<th>docker search mysql</th>
+<th>找mysql版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker pull mysql:版本</td>
+<td>拉取镜像</td>
+</tr>
+<tr>
+<td>mkdir ~/mysql</td>
+<td>在根目录下建立mysql文件夹</td>
+</tr>
+<tr>
+<td>cd ~/mysql</td>
+<td>进入mysql文件夹</td>
+</tr>
+<tr>
+<td>docker run -id \</td>
+<td>守护进程形式建立容器(\表示下方为同一段指令)</td>
+</tr>
+<tr>
+<td>-p 3307:3306 \</td>
+<td>容器3306端口映射宿主机3307</td>
+</tr>
+<tr>
+<td>–name=c_mysql \</td>
+<td>命名为c_mysql</td>
+</tr>
+<tr>
+<td>-v $pwd/conf:/etc/mysql/conf.d \</td>
+<td>$pwd获取当前路径的conf目录，映射到容器的/etc/mysql/conf.d（mysql的配置文件，方便日后修改配置）</td>
+</tr>
+<tr>
+<td>-v $pwd/logs:/logs \</td>
+<td>日志目录</td>
+</tr>
+<tr>
+<td>-v $pwd/data:/var/lib/mysql \</td>
+<td>数据目录，保证数据不因为容器出问题而消失</td>
+</tr>
+<tr>
+<td>-e MYSQL_ROOT_PASSWORD=123456 \</td>
+<td>-e为环境变量设置，MYSQL_ROOT_PASSWORD为密码</td>
+</tr>
+<tr>
+<td>mysql</td>
+<td>mysql镜像生成的容器</td>
+</tr>
+<tr>
+<td>docker exec -it c_mysql /bin/bash</td>
+<td>进入c_mysql容器</td>
+</tr>
+<tr>
+<td>mysql -uroot -p123456</td>
+<td>输入用户名和设置的密码</td>
+</tr>
+</tbody></table>
+<h3 id="5、DockerFile"><a href="#5、DockerFile" class="headerlink" title="5、DockerFile"></a>5、DockerFile</h3><p>Docker镜像原理由特殊文件系统叠加而成，其实最底层使用宿主机的内核，然后次底层是基础镜像，一层一层叠加，下载上面的实际上都会查看是否有下面的基础，基础镜像也可以复用。</p>
+<p>镜像启动容器时，会在顶层加载一个可读写的文件系统作为容器。</p>
+<p>本质是一个分层文件系统。</p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/u4LEdwvMRyJQfYvDg5pbQNqu1FZZcu9fWuBqODNksPs.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<h4 id="-4"><a href="#-4" class="headerlink" title=""></a></h4><p><strong>容器也可以做新镜像：</strong></p>
+<table>
+<thead>
+<tr>
+<th>docker commit 容器id 镜像名称:版本号</th>
+<th>容器转镜像</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker save -o 压缩文件名称 镜像名称:版本号</td>
+<td>压缩文件.tar</td>
+</tr>
+<tr>
+<td>docker load-i 压缩文件名称</td>
+<td>解压缩获得新镜像</td>
+</tr>
+<tr>
+<td>docker run -it –name=新容器名 镜像名称:版本号</td>
+<td>可以获得</td>
+</tr>
+</tbody></table>
+<p><strong>目录挂载不生效，该方法不常用</strong></p>
+<h4 id="-5"><a href="#-5" class="headerlink" title=""></a></h4><p><strong>Dockerfile概念</strong></p>
+<p>DockerFile是一个<strong>文本文件</strong>，包含了一条条指定，每一条指令构建一层，给予基础镜像，最终构建出一个新镜像，对于开发人员可以提供一个完全一致的开发环境，对于测试人员，可以拿开发室构建的镜像或者通过Dockerfile文件构建一个新镜像开始工作，对于运维人员。可以实现无缝移植。有很多关键字，可以查。</p>
+<p>构建三步走：</p>
+<p>1、编写Dokcerfile文件 vim Dockerfile</p>
+<p>2、docker build命令构建镜像</p>
+<p>3、docker run依据镜像运行容器实例</p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/nap2E5M6A8votsTjQH-xqXruzaDVIufcJwDJexnX4Xw.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<p><strong>docker执行docker file的大致流程：</strong></p>
+<p>docker从基础镜像运行一个容器，执行一条指令并对容器做出修改，执行类似docker commit的操作提交一个新镜像层，docker在基于刚才提交的镜像运行一个新容器，执行下一条命令，直到完成。</p>
+<p><strong>简洁版：</strong></p>
+<p>dockerfile 的命令摘要</p>
+<ul>
+<li><p>FROM- 镜像从那里来</p>
+</li>
+<li><p>MAINTAINER- 镜像维护者信息</p>
+</li>
+<li><p>RUN- 构建镜像执行的命令，每一次RUN都会构建一层</p>
+</li>
+<li><p>CMD- 容器启动的命令，如果有多个则以最后一个为准，也可以为ENTRYPOINT提供参数</p>
+</li>
+<li><p>VOLUME- 定义数据卷，如果没有定义则使用默认</p>
+</li>
+<li><p>USER- 指定后续执行的用户组和用户</p>
+</li>
+<li><p>WORKDIR- 切换当前执行的工作目录</p>
+</li>
+<li><p>HEALTHCHECH- 健康检测指令</p>
+</li>
+<li><p>ARG- 变量属性值，但不在容器内部起作用</p>
+</li>
+<li><p>EXPOSE- 暴露端口</p>
+</li>
+<li><p>ENV- 变量属性值，容器内部也会起作用</p>
+</li>
+<li><p>ADD- 添加文件，如果是压缩文件也解压</p>
+</li>
+<li><p>COPY- 添加文件，以复制的形式</p>
+</li>
+<li><p>ENTRYPOINT- 容器进入时执行的命令</p>
+</li>
+</ul>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/OHJ5FPe7h8dCvq-DQZmO-7mmGTNGfEGn9UASCv6v1SY.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<h3 id="6、Docker-Compose（服务编排）"><a href="#6、Docker-Compose（服务编排）" class="headerlink" title="6、Docker Compose（服务编排）"></a>6、Docker Compose（服务编排）</h3><p>微服务架构的系统一般包含若干个微服务，每个微服务一般都会部署多个实例，如果每个微服务都有手动启停，维护的工作量也会很大。</p>
+<p><strong>服务编排：按照一定业务规则批量管理容器</strong></p>
+<p>Docker Compose是一个编排多容器分布式部署的工具，提供命令集管理容器化应用的完整开发周期，包括服务构建，启动和停止。使用步骤：</p>
+<p>1。利用Dockerfile定义运行环境镜像</p>
+<p>2。使用docker-compose.yml定义组成应用的各服务（启动多个程序的顺序，关联关系）</p>
+<p>3。运行docker-compose up启动应用</p>
+<p>docker-compose可以直接在<a target="_blank" rel="noopener" href="https://github.com/docker/compose/releases%E4%B8%8B%E8%BD%BD%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%94%B9%E5%90%8Ddocker-compose%E6%94%BE%E5%9C%A8/usr/local/bin%E9%87%8C">https://github.com/docker/compose/releases下载二进制改名docker-compose放在/usr/local/bin里</a></p>
+<p><strong>私有仓库就是上方的阿里云仓库</strong></p>
+<h3 id="7、Docker与虚拟机区别"><a href="#7、Docker与虚拟机区别" class="headerlink" title="7、Docker与虚拟机区别"></a><strong>7、Docker与虚拟机区别</strong></h3><p>Docker概念：</p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/u2TI9tFPvvl9na45ThbueqpSp2KqB22ezaKCtS0OSP8.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
+<h4 id="-6"><a href="#-6" class="headerlink" title=""></a></h4><p>与虚拟机对比：</p>
+<p><img src="https://vipkshttps9.wiz.cn/editor/f19010a0-da1d-11ec-88a5-f96e6e417423/e0e8e1ef-2a8c-49e0-8702-5ccbce8ada20/resources/M-76O0iei39OzG4UzC2AYkKkkCynAXUJL43P5W8rdww.png?token=W.iG7Qy_sJiuUJ3_VJYH9hrDSFpGBiqRfti3j5zfy3EmtoNgWVPmzJLcyDV8UlK-c" alt="img"></p>
 
                 
             </div>
@@ -449,7 +653,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaofeifei-1.github.io/2023/07/06/hello-world/">https://xiaofeifei-1.github.io/2023/07/06/hello-world/</a>
+                    <a href="https://xiaofeifei-1.github.io/2023/07/06/doceker-ji-lu-1/">https://xiaofeifei-1.github.io/2023/07/06/doceker-ji-lu-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,10 +742,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2023/07/06/hello-world/">
                     <div class="card-image">
@@ -559,9 +762,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -574,7 +777,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -594,7 +796,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2023/07/06/doceker-ji-lu-1/">
@@ -628,6 +830,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
