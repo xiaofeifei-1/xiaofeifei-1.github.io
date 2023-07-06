@@ -6,7 +6,7 @@
   <link href="https://xiaofeifei-1.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaofeifei-1.github.io/"/>
-  <updated>2023-07-06T12:47:13.790Z</updated>
+  <updated>2023-07-06T13:22:19.386Z</updated>
   <id>https://xiaofeifei-1.github.io/</id>
   
   <author>
@@ -17,37 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ros记录1</title>
-    <link href="https://xiaofeifei-1.github.io/2023/07/06/ros-ji-lu-1/"/>
-    <id>https://xiaofeifei-1.github.io/2023/07/06/ros-ji-lu-1/</id>
-    <published>2023-07-06T12:47:13.000Z</published>
-    <updated>2023-07-06T12:47:13.790Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>first_blog</title>
-    <link href="https://xiaofeifei-1.github.io/2023/07/06/first-blog/"/>
-    <id>https://xiaofeifei-1.github.io/2023/07/06/first-blog/</id>
-    <published>2023-07-06T10:37:02.000Z</published>
-    <updated>2023-07-06T10:37:20.063Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="https://xiaofeifei-1.github.io/2023/07/06/hello-world/"/>
     <id>https://xiaofeifei-1.github.io/2023/07/06/hello-world/</id>
-    <published>2023-07-06T06:51:51.637Z</published>
-    <updated>2023-07-06T06:44:51.347Z</updated>
+    <published>2023-07-05T16:00:00.000Z</published>
+    <updated>2023-07-06T13:22:19.386Z</updated>
     
     
       
@@ -60,6 +34,12 @@
     
     
     
+    <category term="Markdown" scheme="https://xiaofeifei-1.github.io/categories/Markdown/"/>
+    
+    
+    <category term="Typora" scheme="https://xiaofeifei-1.github.io/tags/Typora/"/>
+    
+    <category term="Markdown" scheme="https://xiaofeifei-1.github.io/tags/Markdown/"/>
     
   </entry>
   
